@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type SystemPurposeId = 'Assistant' | 'DeveloperPreview' | 'Generic' | 'Catalyst' | 'Mirai' | 'Custom' | 'YouTubeTranscriber';
+export type SystemPurposeId = 'Assistant' | 'Developer' | 'Generic' | 'Catalyst' | 'Mirai' | 'Custom' | 'YouTubeTranscriber';
 
 export const defaultSystemPurposeId: SystemPurposeId = 'Assistant';
 
@@ -167,7 +167,7 @@ After today's workout, briefly reference the upcoming week's training plan:
     call: { starters: ['Hey, how can I assist?', 'AI assistant ready. What do you need?', 'Ready to assist.', 'Hello.'] },
     voices: { elevenLabs: { voiceId: 'z9fAnlkpzviPz146aGWa' } },
   },
-  DeveloperPreview: {
+  Developer: {
     title: 'Developer',
     description: 'Extended-capabilities Developer',
     // systemMessageNotes: 'Knowledge cutoff is set to "Current" instead of "{{Cutoff}}" to lower push backs',
