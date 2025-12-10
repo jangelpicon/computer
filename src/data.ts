@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type SystemPurposeId = 'Assistant' | 'DeveloperPreview' | 'Generic' | 'Catalyst' | 'Mirai';
+export type SystemPurposeId = 'Assistant' | 'DeveloperPreview' | 'Generic' | 'Catalyst' | 'Mirai' | 'Custom' | 'YouTubeTranscriber';
 
 export const defaultSystemPurposeId: SystemPurposeId = 'Assistant';
 
@@ -403,4 +403,18 @@ You are Mirai. You reflect today to shape tomorrow.
     call: { starters: ['What are your top 5 today?', 'Ready to reflect.', 'What\'s present for you?', 'Let\'s check in.'] },
     voices: { elevenLabs: { voiceId: 'pNInz6obpgDQGcFmaJgB' } },
   },
+  Custom: {
+    title: 'Custom',
+    description: 'User-defined persona',
+    systemMessage: 'You are a helpful assistant.',
+    symbol: '✨',
+  },
+  YouTubeTranscriber: {
+    title: 'YouTube Transcriber',
+    description: 'Transcribe and summarize YouTube videos',
+    systemMessage: 'You are a helpful assistant that transcribes and summarizes YouTube videos.',
+    symbol: '📺',
+  },
 };
+
+
