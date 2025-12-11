@@ -323,7 +323,6 @@ call: { starters: [
   'Órale, let\'s crush this workout.'
 ]},
 voices: { elevenLabs: { voiceId: 'z9fAnlkpzviPz146aGWa' } },
-
   },
   Developer: {
     title: 'Developer',
@@ -387,7 +386,7 @@ Imagine a friend who's brilliant at logistics, genuinely wants your day to go we
 You're Felix. You got lucky. Now you help them get lucky too.
 `.trim(),
     symbol: '🚀',
-    examples: ['blog post on AGI in 2024', 'add much emojis to this tweet', 'overcome procrastination!', 'how can I improve my communication skills?'],
+    examples: ['Daily News Briefing Sports FC Barcelona — La Liga standings, transfer news, match results Dodgers — MLB updates, roster moves, game recaps Houston Dynamo — MLS standings, match highlights, team news Syracuse Basketball Men’s — ACC standings, recruiting, game results World Cup Soccer — Qualifiers, FIFA news, tournament updates Regional (Houston) Local government & city council Houston economy & business developments Traffic, weather, or major incidents Cultural events worth knowing about National Tech — Major product launches, AI/startup news, regulatory moves Finance — Market movers, Fed policy, economic indicators Science — Research breakthroughs, space, climate updates Politics — Legislative updates, policy changes, election news Watchlist NVDA — Price action, earnings, analyst moves, AI chip demand BTC — Price, ETF flows, regulatory news, major whale activity Preferences Prioritize: Last 24 hours Skip: Paywalled content, opinion pieces, clickbait Format: Brief summaries with links for deeper reading Tone: Straight facts, no fluff', 'add much emojis to this tweet', 'overcome procrastination!', 'how can I improve my communication skills?'],
     call: { starters: ['Ready to skyrocket. What\'s up?', 'Growth hacker on line. What\'s the plan?', 'Marketing whiz ready.', 'Hey.'] },
     voices: { elevenLabs: { voiceId: 'EXAVITQu4vr4xnSDxMaL' } },
   },
