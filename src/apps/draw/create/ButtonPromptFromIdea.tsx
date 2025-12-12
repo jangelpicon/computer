@@ -33,6 +33,7 @@ export function ButtonPromptFromIdea(props: {
       sx={{
         // '--ButtonGroup-separatorSize': 0,
         minWidth: 160,
+        backgroundColor: 'background.surface', // Options: 'background.body', 'background.level1', '#ffffff', 'transparent', etc.
       }}
     >
       <Tooltip disableInteractive title='New Idea'>
@@ -44,12 +45,19 @@ export function ButtonPromptFromIdea(props: {
             // minWidth: 100,
             justifyContent: 'flex-start',
             transition: 'background-color 0.2s, color 0.2s',
+            // backgroundColor: 'background.surface', // Uncomment to set button background
           }}>
           Idea
         </Button>
       </Tooltip>
       <Tooltip disableInteractive title='Use Idea'>
-        <IconButton size='sm' onClick={onIdeaUse}>
+        <IconButton 
+          size='sm' 
+          onClick={onIdeaUse}
+          sx={{
+            // backgroundColor: 'background.surface', // Uncomment to set icon button background
+          }}
+        >
           <ArrowForwardRoundedIcon />
         </IconButton>
       </Tooltip>
