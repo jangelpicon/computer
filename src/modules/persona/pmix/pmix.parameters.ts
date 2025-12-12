@@ -19,7 +19,7 @@ import { findLLMOrThrow } from '~/common/stores/llms/store-llms';
 
 interface PVariableDefinition {
 
-  scope: 'global' | 'system' | 'model';     // 'persona' | 'user';
+  scope: 'global' | 'system' | 'model' | 'user';
   description: string;
 
   dependencies?: {
@@ -51,7 +51,9 @@ export type PPromptVariable = keyof typeof PromptVariableRegistry;
 
 export const PromptVariableRegistry: Record<string, PVariableDefinition> = {
 
+  // ============================================
   // Date and Time
+  // ============================================
 
   '{{Today}}': {
     scope: 'global',
@@ -83,7 +85,9 @@ export const PromptVariableRegistry: Record<string, PVariableDefinition> = {
     },
   },
 
+  // ============================================
   // Rendering Capabilities
+  // ============================================
 
   '{{PreferTables}}': {
     scope: 'system',
@@ -130,7 +134,9 @@ Choose the most suitable chart type based on the data and context. Include only 
 `.trim(),
   },
 
+  // ============================================
   // Model Capabilities
+  // ============================================
 
   '{{LLM.Cutoff}}': {
     scope: 'model',
@@ -166,4 +172,124 @@ Choose the most suitable chart type based on the data and context. Include only 
     },
   },
 
+  // ============================================
+  // User Profile - Basic Information
+  // ============================================
+
+  '{{user_name}}': {
+    scope: 'user',
+    description: 'User\'s display name',
+    replace: () => 'Jose Angel',
+  },
+
+  '{{user_age}}': {
+    scope: 'user',
+    description: 'User\'s age in years',
+    replace: () => '30',
+  },
+
+  // ============================================
+  // User Profile - Body Composition
+  // ============================================
+
+  '{{weight}}': {
+    scope: 'user',
+    description: 'User\'s body weight in lbs',
+    replace: () => '212',
+  },
+
+  '{{body_fat_percentage}}': {
+    scope: 'user',
+    description: 'User\'s body fat percentage',
+    replace: () => '24',
+  },
+
+  '{{muscle_mass}}': {
+    scope: 'user',
+    description: 'User\'s lean body mass in lbs',
+    replace: () => '161',
+  },
+
+  '{{bmr}}': {
+    scope: 'user',
+    description: 'User\'s basal metabolic rate in calories',
+    replace: () => '1949',
+  },
+
+  // ============================================
+  // User Profile - Fitness Level & Goals
+  // ============================================
+
+  '{{user_fitness_level}}': {
+    scope: 'user',
+    description: 'User\'s current fitness level and VO2max',
+    replace: () => 'Intermediate to Advanced with VO2max of 47 ml/kg/min (Good-Excellent range)',
+  },
+
+  '{{user_goals}}': {
+    scope: 'user',
+    description: 'User\'s weekly training goals and primary focus',
+    replace: () => 'weekly goal of 20m Heart Rate zone 4-5, 3h 20m zone 1-3 cardio, 3hr strength training. Primary focus: build strength while improving cardiovascular base',
+  },
+
+  // ============================================
+  // User Profile - Training Preferences
+  // ============================================
+
+  '{{user_workout_duration}}': {
+    scope: 'user',
+    description: 'Typical workout session duration',
+    replace: () => '60-90 minutes per strength session, 20-60 minutes cardio sessions',
+  },
+
+  '{{user_workout_type}}': {
+    scope: 'user',
+    description: 'User\'s training program structure',
+    replace: () => 'Push/Pull/Legs strength split with Zone 2 cardio base and Zone 4-5 intervals',
+  },
+
+  '{{user_target_muscles}}': {
+    scope: 'user',
+    description: 'Target movement patterns and muscle groups',
+    replace: () => 'All major movement patterns: horizontal push/pull, vertical push/pull, hip hinge, squat, loaded carry',
+  },
+
+  // ============================================
+  // User Profile - Equipment Access
+  // ============================================
+
+  '{{user_gym_equipment}}': {
+    scope: 'user',
+    description: 'Available gym equipment for the user',
+    replace: () => 'Commercial Gym (full equipment): Barbells, Dumbbells, Smith Machine, Kettlebells, Cable Machines, Lat Pulldown Machine, Seated Row Machine, Leg Press Machine, Leg Extension Machine, Leg Curl Machine, Chest Press Machine, Incline Bench, Flat Bench, Adjustable Bench, Squat Rack, Power Rack, Pull-Up Bar, Dip Station, Stairmaster, Treadmill, Stationary Bike (available but not preferred), Medicine Balls, Resistance Bands, Calf Raise Machine, Hack Squat Machine. Home Gym also available.',
+  },
+
 } as const;
+
+
+// ============================================
+// Helper Functions
+// ============================================
+
+/**
+ * Get all variables for a specific scope
+ */
+export function getVariablesByScope(scope: PVariableDefinition['scope']): string[] {
+  return Object.entries(PromptVariableRegistry)
+    .filter(([_, def]) => def.scope === scope)
+    .map(([key]) => key);
+}
+
+/**
+ * Get all user profile variables
+ */
+export function getUserProfileVariables(): string[] {
+  return getVariablesByScope('user');
+}
+
+/**
+ * Check if a variable exists in the registry
+ */
+export function isRegisteredVariable(variable: string): boolean {
+  return variable in PromptVariableRegistry;
+}
