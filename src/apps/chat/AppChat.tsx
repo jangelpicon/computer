@@ -655,8 +655,8 @@ export function AppChat() {
             style={{
               // for anchoring the scroll button in place
               position: 'relative',
-              // Custom background color for the chat area - Dodger blue theme
-              backgroundColor: _paneIsIncognito ? theme.palette.background.level3 : (theme.palette.mode === 'dark' ? '#0d3b66' : '#e6f2ff'),
+              // Custom background color for the chat area - Dodger blue theme to blend with message backgrounds
+              backgroundColor: _paneIsIncognito ? theme.palette.background.level3 : (theme.palette.mode === 'dark' ? '#0a1929' : '#f0f8ff'),
               ...(isMultiPane ? {
                 marginBottom: '1px', // compensates for the -1px in `composerOpenSx` for the Composer offset
                 borderRadius: '0.375rem',

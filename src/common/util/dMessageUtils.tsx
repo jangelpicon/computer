@@ -85,11 +85,11 @@ export function messageBackground(messageRole: DMessageRole | string, userComman
     case 'user':
       return userCommand === 'draw' ? 'warning.softActiveBg'
         : userCommand === 'react' ? 'success.softHoverBg'
-          : 'primary.plainHoverBg'; // was .background.level1
+          : 'rgba(30, 144, 255, 0.1)'; // Light dodger blue for user messages
     case 'assistant':
-      return isAssistantIssue ? 'danger.softBg' : 'background.surface';
+      return isAssistantIssue ? 'danger.softBg' : 'rgba(30, 144, 255, 0.05)'; // Very light dodger blue for assistant messages
     case 'system':
-      return wasEdited ? 'warning.softHoverBg' : 'neutral.softBg';
+      return wasEdited ? 'warning.softHoverBg' : 'rgba(30, 144, 255, 0.08)'; // Slightly blue tint for system messages
     default:
       return '#ff0000';
   }

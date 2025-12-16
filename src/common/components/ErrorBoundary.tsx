@@ -115,12 +115,12 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
             <div className='vivided'>
               <h2 className='heading'>Oops, we hit a snag</h2>
               <div className='message'>
-                <p style={{ fontWeight: 500 }}>An unexpected error occurred.{outer ? ' Please try reloading Big-AGI.' : ''}</p>
+                <p style={{ fontWeight: 500 }}>An unexpected error occurred.{outer ? ' Please try reloading computer-vato.' : ''}</p>
                 {outer && (
                   <p style={{ fontWeight: 500 }}>
                     {' '}If the issue persists, please{' '}
                     <a href={BaseProduct.SupportForm()} target='_blank' rel='noopener noreferrer' style={{ color: 'inherit', textDecoration: 'underline' }}>
-                      Contact Support
+                      Chill Out
                     </a>.
                   </p>
                 )}
@@ -140,7 +140,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem' }}>
               {outer ? (
                 <button className='button' onClick={() => window.location.reload()}>
-                  Reload Big-AGI
+                  Reload computer-vato
                 </button>
               ) : (
                 <button className='button' onClick={() => this.resetErrorBoundary()}>
