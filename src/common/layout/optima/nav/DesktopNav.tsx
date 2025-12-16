@@ -33,7 +33,7 @@ import { optimaActions, optimaOpenModels, optimaOpenPreferences, optimaToggleDra
 import { scratchClipSupported, useScratchClipVisibility } from '../scratchclip/store-scratchclip';
 
 
-export const bigAgiProUrl = 'https://big-agi.com' + clientUtmSource('upgrade-apps');
+// Removed bigAgiProUrl - no longer needed
 
 
 const desktopNavBarSx: SxProps = {
@@ -170,16 +170,6 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
           sx={{ minWidth: 260 }}
         >
 
-          <MenuItem component='a' variant='solid' color='primary' href={bigAgiProUrl} target='_blank' sx={{ minHeight: 40 }}>
-            {/*<ListItemDecorator>New</ListItemDecorator>*/}
-            {/*<ListItemDecorator><RocketLaunchRounded /></ListItemDecorator>*/}
-            Big-AGI Pro
-            {/*✨*/}
-            <ArrowOutwardRoundedIcon sx={{ ml: 'auto' }}/>
-          </MenuItem>
-
-          <ListDivider />
-
           {/* APPS Section */}
           {overflowApps.length > 0 && (
             <>
@@ -222,14 +212,7 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
               Support
             </Typography>
           </ListItem>
-          <MenuItem component='a' href={BaseProduct.SupportForm()} target='_blank'>
-            <ListItemDecorator>🔥</ListItemDecorator>
-            <div>
-              Improve Big-AGI
-              <FormHelperText>AI fixes what you report</FormHelperText>
-            </div>
-            <ArrowOutwardRoundedIcon sx={{ ml: 'auto' }} />
-          </MenuItem>
+
           {!!releaseNotesUrl && (
             <MenuItem onClick={handleShowReleaseNotes}>
               <ListItemDecorator>

@@ -5,8 +5,7 @@ import CallIcon from '@mui/icons-material/Call';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import DifferenceOutlinedIcon from '@mui/icons-material/DifferenceOutlined';
 import Diversity2Icon from '@mui/icons-material/Diversity2';
-import EventNoteIcon from '@mui/icons-material/EventNote';
-import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
+// Removed EventNote icons - no longer needed
 import GrainIcon from '@mui/icons-material/Grain';
 import ImageIcon from '@mui/icons-material/Image';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
@@ -211,16 +210,7 @@ export const navItems: {
       hideIcon: hasNoChatLinkItems,
       hideNav: hasNoChatLinkItems,
     },
-    {
-      name: 'News',
-      icon: EventNoteOutlinedIcon,
-      iconActive: EventNoteIcon,
-      type: 'app',
-      route: '/news',
-      hideBar: true,
-      hideDrawer: true,
-      hideOnMobile: true,
-    },
+
   ],
 
   // Modals
@@ -247,18 +237,18 @@ export const navItems: {
     //   icon: TwitterIcon,
     //   href: 'https://twitter.com',
     // },
-    {
-      type: 'extLink',
-      name: 'Discord',
-      icon: DiscordIcon,
-      href: Brand.URIs.SupportInvite,
-    },
-    {
-      type: 'extLink',
-      name: 'GitHub',
-      icon: GitHubIcon,
-      href: Brand.URIs.OpenRepo,
-    },
+    // {
+    //   type: 'extLink',
+    //   name: 'Discord',
+    //   icon: DiscordIcon,
+    //   href: Brand.URIs.SupportInvite,
+    // },
+    // {
+    //   type: 'extLink',
+    //   name: 'GitHub',
+    //   icon: GitHubIcon,
+    //   href: Brand.URIs.OpenRepo,
+    // },
   ],
 
 };

@@ -655,6 +655,8 @@ export function AppChat() {
             style={{
               // for anchoring the scroll button in place
               position: 'relative',
+              // Custom background color for the chat area - Dodger blue theme
+              backgroundColor: _paneIsIncognito ? theme.palette.background.level3 : (theme.palette.mode === 'dark' ? '#0d3b66' : '#e6f2ff'),
               ...(isMultiPane ? {
                 marginBottom: '1px', // compensates for the -1px in `composerOpenSx` for the Composer offset
                 borderRadius: '0.375rem',
@@ -679,7 +681,6 @@ export function AppChat() {
                 pointerEvents: 'auto',
               }),
               ...((_paneIsIncognito && {
-                backgroundColor: theme.palette.background.level3,
                 backgroundImage: 'repeating-linear-gradient(45deg, rgba(0,0,0,0.03), rgba(0,0,0,0.03) 10px, transparent 10px, transparent 20px)',
               })),
             }}

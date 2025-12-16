@@ -4,7 +4,7 @@ import TimeAgo from 'react-timeago';
 
 import { AspectRatio, Box, Button, Card, CardContent, CardOverflow, ColorPaletteProp, Container, Divider, Grid, ListDivider, Sheet, Typography, VariantProp } from '@mui/joy';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
+// Removed ArrowOutwardRoundedIcon - no longer needed
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LaunchIcon from '@mui/icons-material/Launch';
 
@@ -17,7 +17,7 @@ import { Release } from '~/common/app.release';
 import { animationColorBlues, animationColorRainbow } from '~/common/util/animUtils';
 import { useIsMobile } from '~/common/components/useMatchMedia';
 
-import { BigAgiProNewsCallout, bigAgiProUrl } from './bigAgiPro.data';
+// Removed Big-AGI Pro imports - no longer needed
 import { DevNewsItem, newsFrontendTimestamp, NewsItems } from './news.data';
 import { beamNewsCallout } from './beam.data';
 
@@ -223,21 +223,6 @@ export function AppNews() {
           >
             Continue
           </Button>
-          {!Release.IsNodeDevBuild && (
-            <Button
-              variant='solid' color='primary' size='lg'
-              component={Link} href={bigAgiProUrl} target='_blank' noLinkStyle
-              endDecorator={<><ArrowOutwardRoundedIcon /></>}
-              sx={{
-                boxShadow: '0 8px 24px -4px rgb(var(--joy-palette-primary-mainChannel) / 20%)',
-                minWidth: 180,
-                // transform: 'translateY(-1px)',
-              }}
-            >
-              Big-AGI Pro
-              ✨
-            </Button>
-          )}
         </Box>
 
         {/*<Typography level='title-sm' sx={{ mb: 1, placeSelf: 'start', ml: 1 }}>*/}
@@ -248,7 +233,6 @@ export function AppNews() {
 
           {/* Inject the callout item here*/}
           {/*<Box sx={{ mb: 3 }}>*/}
-          {/*  <BigAgiProNewsCallout />*/}
           {/*</Box>*/}
 
           {/* Development Notices */}
