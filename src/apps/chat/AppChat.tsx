@@ -98,10 +98,10 @@ const composerOpenSx: SxProps = {
   // NOTE: disabled on 2025-03-05: conflicts with the GlobalDragOverlay's
   // zIndex: 21, // just to allocate a surface, and potentially have a shadow
   minWidth: { md: 480 }, // don't get compresses too much on desktop
-  // backgroundColor: themeBgAppChatComposer, // inlined in the Composer
+  backgroundColor: 'rgba(30, 144, 255, 0.03)', // Very subtle Dodger blue background for composer
   transition: 'background-color 0.5s ease-out',
   borderTop: `1px solid`,
-  borderTopColor: 'rgba(var(--joy-palette-neutral-mainChannel, 99 107 116) / 0.4)',
+  borderTopColor: 'rgba(30, 144, 255, 0.2)', // Dodger blue border
   // hack: eats the bottom of the last message (as it has a 1px divider)
   // NOTE: commented on 2024-05-13, as other content was stepping on the border due to it and missing zIndex
   // mt: '-1px',
@@ -110,7 +110,7 @@ const composerOpenSx: SxProps = {
 const composerOpenMobileSx: SxProps = {
   zIndex: 21, // allocates the surface, possibly enables shadow if we like
   py: 0.5, // have some breathing room
-  // boxShadow: '0px -1px 8px -2px rgba(0, 0, 0, 0.4)',
+  boxShadow: '0px -1px 8px -2px rgba(30, 144, 255, 0.15)', // Subtle blue shadow
   ...composerOpenSx,
 } as const;
 
