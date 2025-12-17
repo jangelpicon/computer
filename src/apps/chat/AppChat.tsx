@@ -98,10 +98,10 @@ const composerOpenSx: SxProps = {
   // NOTE: disabled on 2025-03-05: conflicts with the GlobalDragOverlay's
   // zIndex: 21, // just to allocate a surface, and potentially have a shadow
   minWidth: { md: 480 }, // don't get compresses too much on desktop
-  backgroundColor: 'rgba(30, 144, 255, 0.03)', // Very subtle Dodger blue background for composer
+  backgroundColor: 'rgba(255, 51, 51, 0.05)', // Very subtle intense red background for composer
   transition: 'background-color 0.5s ease-out',
   borderTop: `1px solid`,
-  borderTopColor: 'rgba(30, 144, 255, 0.2)', // Dodger blue border
+  borderTopColor: 'rgba(255, 51, 51, 0.2)', // Intense red border
   // hack: eats the bottom of the last message (as it has a 1px divider)
   // NOTE: commented on 2024-05-13, as other content was stepping on the border due to it and missing zIndex
   // mt: '-1px',
@@ -110,7 +110,7 @@ const composerOpenSx: SxProps = {
 const composerOpenMobileSx: SxProps = {
   zIndex: 21, // allocates the surface, possibly enables shadow if we like
   py: 0.5, // have some breathing room
-  boxShadow: '0px -1px 8px -2px rgba(30, 144, 255, 0.15)', // Subtle blue shadow
+  boxShadow: '0px -1px 8px -2px rgba(255, 51, 51, 0.25)', // Subtle red shadow with more intensity
   ...composerOpenSx,
 } as const;
 
@@ -655,8 +655,8 @@ export function AppChat() {
             style={{
               // for anchoring the scroll button in place
               position: 'relative',
-              // Custom background color for the chat area - Dodger blue theme to blend with message backgrounds
-              backgroundColor: _paneIsIncognito ? theme.palette.background.level3 : (theme.palette.mode === 'dark' ? '#0a1929' : '#f0f8ff'),
+              // Barry's Bootcamp inspired background - intense, moody red tones
+              backgroundColor: _paneIsIncognito ? theme.palette.background.level3 : (theme.palette.mode === 'dark' ? '#1a0c0c' : '#fff0f0'),
               ...(isMultiPane ? {
                 marginBottom: '1px', // compensates for the -1px in `composerOpenSx` for the Composer offset
                 borderRadius: '0.375rem',
